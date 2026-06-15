@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>My Profile – Placement Portal</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<nav class="navbar">
+    <a class="brand" th:href="@{/}">Placement<span>Portal</span></a>
+    <div class="nav-links">
+        <a th:href="@{/student/dashboard}">Dashboard</a>
+        <a th:href="@{/student/jobs}">Browse Jobs</a>
+        <a th:href="@{/student/profile}" class="active">Profile</a>
+        <a th:href="@{/student/logout}">Logout</a>
+    </div>
+</nav>
+
+<div class="container" style="max-width:720px;">
+    <div class="card">
+        <h2 class="page-title">✏️ Edit Profile</h2>
+
+        <div th:if="${error}" class="alert alert-error" th:text="${error}"></div>
+        <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
+
+        <form th:action="@{/student/profile}" method="post" th:object="${student}">
+            <h3 class="card-header">Personal Information</h3>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" class="form-control" th:field="*{fullName}" required/>
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" id="phone" class="form-control" th:field="*{phone}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Address</label>
+                <input type="text" class="form-control" th:field="*{address}" placeholder="City, State"/>
+            </div>
+
+            <h3 class="card-header" style="margin-top:10px;">Academic Information</h3>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Course</label>
+                    <select class="form-control" th:field="*{course}">
+                        <option value="">Select Course</option>
+                        <option value="B.Tech">B.Tech</option>
+                        <option value="M.Tech">M.Tech</option>
+                        <option value="BCA">BCA</option>
+                        <option value="MCA">MCA</option>
+                        <option value="B.Sc">B.Sc</option>
+                        <option value="MBA">MBA</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Branch</label>
+                    <select class="form-control" th:field="*{branch}">
+                        <option value="">Select Branch</option>
+                        <option value="CSE">CSE</option>
+                        <option value="IT">IT</option>
+                        <option value="ECE">ECE</option>
+                        <option value="EEE">EEE</option>
+                        <option value="ME">ME</option>
+                        <option value="CE">CE</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Passing Year</label>
+                    <select class="form-control" th:field="*{passingYear}">
+                        <option value="">Select Year</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>CGPA (out of 10)</label>
+                    <input type="number" id="cgpa" class="form-control" th:field="*{cgpa}" step="0.01" min="0" max="10"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Skills <small style="color:#64748B">(comma-separated)</small></label>
+                <input type="text" class="form-control" th:field="*{skills}" placeholder="Java, Python, SQL, React"/>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Update Profile</button>
+        </form>
+    </div>
+</div>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

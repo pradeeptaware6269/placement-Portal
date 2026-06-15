@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Browse Jobs – Placement Portal</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<nav class="navbar">
+    <a class="brand" th:href="@{/}">Placement<span>Portal</span></a>
+    <div class="nav-links">
+        <a th:href="@{/student/dashboard}">Dashboard</a>
+        <a th:href="@{/student/jobs}" class="active">Browse Jobs</a>
+        <a th:href="@{/student/profile}">Profile</a>
+        <a th:href="@{/student/logout}">Logout</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 class="page-title">💼 Available Job Openings</h1>
+
+    <div th:if="${error}" class="alert alert-error" th:text="${error}"></div>
+    <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
+
+    <!-- Profile incomplete warning -->
+    <div th:if="${student.cgpa == null}" class="alert alert-info">
+        ⚠️ Your profile is incomplete. <a th:href="@{/student/profile}" style="color:#1E40AF;">Complete your profile</a> to check eligibility.
+    </div>
+
+    <div th:if="${jobs.empty}" class="alert alert-info">No open job postings at the moment. Check back later!</div>
+
+    <div class="job-grid">
+        <div class="job-card" th:each="job : ${jobs}">
+            <div class="job-title" th:text="${job.role}">Job Role</div>
+            <div class="company">🏢 <span th:text="${job.company.name}"></span> &nbsp;|&nbsp; <span th:text="${job.company.location}"></span></div>
+
+            <div class="detail"><strong>Package:</strong> <span th:text="${job.packageOffered != null ? job.packageOffered + ' LPA' : 'Not disclosed'}"></span></div>
+            <div class="detail"><strong>Min CGPA:</strong> <span th:text="${job.minCgpa != null ? job.minCgpa : 'Any'}"></span></div>
+            <div class="detail"><strong>Branch:</strong> <span th:text="${job.requiredBranch != null ? job.requiredBranch : 'All'}"></span></div>
+            <div class="detail"><strong>Passing Year:</strong> <span th:text="${job.passingYear != null ? job.passingYear : 'Any'}"></span></div>
+            <div class="detail"><strong>Deadline:</strong>
+                <span th:text="${job.applicationDeadline != null ? #temporals.format(job.applicationDeadline,'dd MMM yyyy') : 'Open'}"></span>
+            </div>
+
+            <!-- Skills pills -->
+            <div th:if="${job.requiredSkills != null}" style="margin-top:8px;">
+                <strong style="font-size:.82rem;">Skills:</strong>
+                <span th:each="skill : ${#strings.arraySplit(job.requiredSkills,',')}" class="pill" th:text="${skill}"></span>
+            </div>
+
+            <!-- Actions -->
+            <div class="actions">
+                <!-- Already applied -->
+                <span th:if="${appliedMap[job.id]}" class="badge badge-applied">✅ Applied</span>
+
+                <!-- Eligible – not yet applied -->
+                <form th:if="${!appliedMap[job.id] && eligibilityMap[job.id]}"
+                      th:action="@{/student/apply/{id}(id=${job.id})}" method="post">
+                    <button type="submit" class="btn btn-success btn-sm">Apply Now</button>
+                </form>
+
+                <!-- Not eligible -->
+                <span th:if="${!appliedMap[job.id] && !eligibilityMap[job.id]}" class="not-eligible">
+                    ❌ Not Eligible
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

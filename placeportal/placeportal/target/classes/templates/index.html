@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Placement Portal – Placement Management System</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="brand">Placement<span>Portal</span></div>
+    <div class="nav-links">
+        <a th:href="@{/student/login}">Student Login</a>
+        <a th:href="@{/admin/login}">Admin Login</a>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <h1>🎓VIIT Placement Portal</h1>
+    <p>A simple and smart Placement Management System for colleges</p>
+
+    <div class="hero-cards">
+        <!-- Student Register -->
+        <a th:href="@{/student/register}" class="hero-card">
+            <div class="icon">📝</div>
+            <h3>Student Register</h3>
+            <p>New student? Create your account and start applying</p>
+            <span class="btn btn-primary btn-sm">Register Now</span>
+        </a>
+
+        <!-- Student Login -->
+        <a th:href="@{/student/login}" class="hero-card">
+            <div class="icon">👨‍🎓</div>
+            <h3>Student Login</h3>
+            <p>Already registered? Login to view and apply for jobs</p>
+            <span class="btn btn-primary btn-sm">Student Login</span>
+        </a>
+
+        <!-- Admin Login -->
+        <a th:href="@{/admin/login}" class="hero-card">
+            <div class="icon">👨‍💼</div>
+            <h3>Admin Login</h3>
+            <p>Manage companies, jobs, and placement operations</p>
+            <span class="btn btn-primary btn-sm">Admin Login</span>
+        </a>
+    </div>
+</section>
+
+<!-- Features -->
+<div class="container" style="margin-top: 0;">
+    <div class="card" style="text-align: center; background: linear-gradient(135deg,#F5F3FF,#EFF6FF);">
+        <h2 style="font-size:1.4rem; margin-bottom:20px; color:#3730A3;">Why PlaceTrack?</h2>
+        <div style="display:flex; justify-content:center; gap:40px; flex-wrap:wrap;">
+            <div><div style="font-size:2rem;">🎯</div><strong>Eligibility Matching</strong><br/><small>Only eligible students can apply</small></div>
+            <div><div style="font-size:2rem;">🏢</div><strong>Company Management</strong><br/><small>Manage companies and openings</small></div>
+            <div><div style="font-size:2rem;">📊</div><strong>Application Tracking</strong><br/><small>Real-time status updates</small></div>
+            <div><div style="font-size:2rem;">🏆</div><strong>Placement Records</strong><br/><small>Track placed students</small></div>
+        </div>
+    </div>
+</div>
+
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

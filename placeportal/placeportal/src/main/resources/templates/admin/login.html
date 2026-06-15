@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Admin Login – Placement Portal</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<nav class="navbar">
+    <a class="brand" th:href="@{/}">Placement<span>Portal</span></a>
+</nav>
+<div class="login-wrap">
+    <div class="login-box">
+        <div style="text-align:center; margin-bottom:20px;">
+            <div style="font-size:2.8rem;">👨‍💼</div>
+            <h2>Admin Login</h2>
+            <p class="sub">Placement Portal</p>
+        </div>
+
+        <div th:if="${error}" class="alert alert-error" th:text="${error}"></div>
+
+        <form th:action="@{/admin/login}" method="post">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username" class="form-control" required placeholder="admin"/>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control" required placeholder="••••••••"/>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login as Admin</button>
+        </form>
+
+        
+        <p style="text-align:center; margin-top:8px;">
+            <a th:href="@{/}" style="color:#4F46E5; font-size:.9rem;">← Back to Home</a>
+        </p>
+    </div>
+</div>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

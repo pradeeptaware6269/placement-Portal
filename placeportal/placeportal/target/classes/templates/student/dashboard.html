@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dashboard – Placement Portal</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<nav class="navbar">
+    <a class="brand" th:href="@{/}">Placement<span>Portal</span></a>
+    <div class="nav-links">
+        <a th:href="@{/student/dashboard}" class="active">Dashboard</a>
+        <a th:href="@{/student/jobs}">Browse Jobs</a>
+        <a th:href="@{/student/profile}">Profile</a>
+        <a th:href="@{/student/logout}">Logout</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 class="page-title">Welcome, <span th:text="${student.fullName}">Student</span> 👋</h1>
+
+    <div th:if="${error}" class="alert alert-error" th:text="${error}"></div>
+    <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
+
+    <!-- Stats -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon">📋</div>
+            <div>
+                <div class="stat-number" th:text="${applicationCount}">0</div>
+                <div class="stat-label">Applications</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🎓</div>
+            <div>
+                <div class="stat-number" th:text="${student.cgpa != null ? student.cgpa : 'N/A'}">-</div>
+                <div class="stat-label">CGPA</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🏆</div>
+            <div>
+                <div class="stat-number" th:text="${student.placementStatus}">-</div>
+                <div class="stat-label">Status</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Summary -->
+    <div class="card">
+        <div class="card-header">📁 My Profile</div>
+        <div class="form-grid">
+            <div>
+                <p><strong>Email:</strong> <span th:text="${student.email}"></span></p>
+                <p><strong>Course:</strong> <span th:text="${student.course}"></span></p>
+                <p><strong>Branch:</strong> <span th:text="${student.branch}"></span></p>
+                <p><strong>Passing Year:</strong> <span th:text="${student.passingYear}"></span></p>
+            </div>
+            <div>
+                <p><strong>Phone:</strong> <span th:text="${student.phone}"></span></p>
+                <p><strong>CGPA:</strong> <span th:text="${student.cgpa}"></span></p>
+                <p><strong>Skills:</strong> <span th:text="${student.skills}"></span></p>
+                <p><strong>Address:</strong> <span th:text="${student.address}"></span></p>
+            </div>
+        </div>
+        <div style="margin-top:12px;">
+            <a th:href="@{/student/profile}" class="btn btn-primary btn-sm">Edit Profile</a>
+            <a th:href="@{/student/jobs}" class="btn btn-success btn-sm">Browse Jobs</a>
+        </div>
+    </div>
+
+    <!-- Applications -->
+    <div class="card">
+        <div class="card-header">📋 My Applications</div>
+        <div th:if="${applications.empty}" class="alert alert-info">
+            You haven't applied to any jobs yet. <a th:href="@{/student/jobs}" style="color:#1E40AF;">Browse Jobs →</a>
+        </div>
+        <div th:if="${!applications.empty}" class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Job Role</th>
+                        <th>Company</th>
+                        <th>Package (LPA)</th>
+                        <th>Applied On</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="app, stat : ${applications}">
+                        <td th:text="${stat.count}"></td>
+                        <td th:text="${app.job.role}"></td>
+                        <td th:text="${app.job.company.name}"></td>
+                        <td th:text="${app.job.packageOffered}"></td>
+                        <td th:text="${#temporals.format(app.appliedAt, 'dd MMM yyyy')}"></td>
+                        <td>
+                            <span th:class="'badge badge-' + ${app.status.toString().toLowerCase()}"
+                                  th:text="${app.status}"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

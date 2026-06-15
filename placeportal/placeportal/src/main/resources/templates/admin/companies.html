@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Companies – Placement Portal</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<nav class="navbar">
+    <a class="brand" th:href="@{/}">Placement<span>Portal</span></a>
+    <div class="nav-links">
+        <a th:href="@{/admin/dashboard}">Dashboard</a>
+        <a th:href="@{/admin/companies}" class="active">Companies</a>
+        <a th:href="@{/admin/jobs}">Jobs</a>
+        <a th:href="@{/admin/applications}">Applications</a>
+        <a th:href="@{/admin/logout}">Logout</a>
+    </div>
+</nav>
+<div class="container">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+        <h1 class="page-title" style="margin:0;">🏢 Companies</h1>
+        <a th:href="@{/admin/companies/add}" class="btn btn-primary">➕ Add Company</a>
+    </div>
+
+    <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
+
+    <div class="card">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>#</th><th>Name</th><th>Industry</th><th>Location</th><th>Website</th><th>Action</th></tr>
+                </thead>
+                <tbody>
+                    <tr th:if="${companies.empty}">
+                        <td colspan="6" style="text-align:center; color:#64748B;">No companies added yet.</td>
+                    </tr>
+                    <tr th:each="c, s : ${companies}">
+                        <td th:text="${s.count}"></td>
+                        <td><strong th:text="${c.name}"></strong></td>
+                        <td th:text="${c.industry}"></td>
+                        <td th:text="${c.location}"></td>
+                        <td><a th:href="${c.website}" target="_blank" style="color:#4F46E5;" th:text="${c.website}"></a></td>
+                        <td>
+                            <a th:href="@{/admin/companies/delete/{id}(id=${c.id})}"
+                               class="btn btn-danger btn-sm btn-confirm-delete">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

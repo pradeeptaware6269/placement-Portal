@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Jobs – Placement Portal</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<nav class="navbar">
+    <a class="brand" th:href="@{/}">Placement<span>Portal</span></a>
+    <div class="nav-links">
+        <a th:href="@{/admin/dashboard}">Dashboard</a>
+        <a th:href="@{/admin/companies}">Companies</a>
+        <a th:href="@{/admin/jobs}" class="active">Jobs</a>
+        <a th:href="@{/admin/applications}">Applications</a>
+        <a th:href="@{/admin/logout}">Logout</a>
+    </div>
+</nav>
+<div class="container">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+        <h1 class="page-title" style="margin:0;">💼 Job Postings</h1>
+        <a th:href="@{/admin/jobs/post}" class="btn btn-primary">📝 Post New Job</a>
+    </div>
+
+    <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
+
+    <div class="card">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>#</th><th>Role</th><th>Company</th><th>Package</th><th>Min CGPA</th><th>Branch</th><th>Deadline</th><th>Status</th><th>Action</th></tr>
+                </thead>
+                <tbody>
+                    <tr th:if="${jobs.empty}">
+                        <td colspan="9" style="text-align:center; color:#64748B;">No jobs posted yet.</td>
+                    </tr>
+                    <tr th:each="j, s : ${jobs}">
+                        <td th:text="${s.count}"></td>
+                        <td><strong th:text="${j.role}"></strong></td>
+                        <td th:text="${j.company.name}"></td>
+                        <td th:text="${j.packageOffered != null ? j.packageOffered + ' LPA' : '-'}"></td>
+                        <td th:text="${j.minCgpa != null ? j.minCgpa : 'Any'}"></td>
+                        <td th:text="${j.requiredBranch != null ? j.requiredBranch : 'All'}"></td>
+                        <td th:text="${j.applicationDeadline != null ? #temporals.format(j.applicationDeadline,'dd MMM yyyy') : 'Open'}"></td>
+                        <td><span th:class="'badge badge-' + ${j.status.toString().toLowerCase()}" th:text="${j.status}"></span></td>
+                        <td>
+                            <a th:if="${j.status.toString() == 'OPEN'}"
+                               th:href="@{/admin/jobs/close/{id}(id=${j.id})}"
+                               class="btn btn-warning btn-sm"
+                               onclick="return confirm('Close this job?')">Close</a>
+                            <span th:if="${j.status.toString() == 'CLOSED'}" style="color:#9CA3AF; font-size:.8rem;">Closed</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

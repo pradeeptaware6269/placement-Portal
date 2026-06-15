@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>All Students – Placement Portal</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<nav class="navbar">
+    <a class="brand" th:href="@{/}">Placement<span>Poratal</span></a>
+    <div class="nav-links">
+        <a th:href="@{/admin/dashboard}">Dashboard</a>
+        <a th:href="@{/admin/students}" class="active">Students</a>
+        <a th:href="@{/admin/placed-students}">Placed</a>
+        <a th:href="@{/admin/logout}">Logout</a>
+    </div>
+</nav>
+<div class="container">
+    <h1 class="page-title">👥 All Students</h1>
+    <div class="card">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>#</th><th>Name</th><th>Email</th><th>Course</th><th>Branch</th><th>Year</th><th>CGPA</th><th>Skills</th><th>Placement</th></tr>
+                </thead>
+                <tbody>
+                    <tr th:if="${students.empty}">
+                        <td colspan="9" style="text-align:center; color:#64748B;">No students registered yet.</td>
+                    </tr>
+                    <tr th:each="s, stat : ${students}">
+                        <td th:text="${stat.count}"></td>
+                        <td><strong th:text="${s.fullName}"></strong></td>
+                        <td th:text="${s.email}"></td>
+                        <td th:text="${s.course}"></td>
+                        <td th:text="${s.branch}"></td>
+                        <td th:text="${s.passingYear}"></td>
+                        <td th:text="${s.cgpa}"></td>
+                        <td style="max-width:160px; white-space:normal; font-size:.8rem;" th:text="${s.skills}"></td>
+                        <td>
+                            <span th:class="'badge badge-' + ${s.placementStatus.toString().toLowerCase().replace('_','-')}"
+                                  th:text="${s.placementStatus}"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

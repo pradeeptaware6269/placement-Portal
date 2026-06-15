@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Add Company – Placement Portal</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<nav class="navbar">
+    <a class="brand" th:href="@{/}">Placement<span>Poral</span></a>
+    <div class="nav-links">
+        <a th:href="@{/admin/dashboard}">Dashboard</a>
+        <a th:href="@{/admin/companies}" class="active">Companies</a>
+        <a th:href="@{/admin/jobs}">Jobs</a>
+        <a th:href="@{/admin/logout}">Logout</a>
+    </div>
+</nav>
+<div class="container" style="max-width:640px;">
+    <div class="card">
+        <h2 class="page-title">➕ Add Company</h2>
+
+        <div th:if="${error}" class="alert alert-error" th:text="${error}"></div>
+
+        <form th:action="@{/admin/companies/add}" method="post" th:object="${company}">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Company Name *</label>
+                    <input type="text" class="form-control" th:field="*{name}" required placeholder="e.g. TCS"/>
+                </div>
+                <div class="form-group">
+                    <label>Industry</label>
+                    <select class="form-control" th:field="*{industry}">
+                        <option value="">Select Industry</option>
+                        <option value="IT/Software">IT / Software</option>
+                        <option value="Banking/Finance">Banking / Finance</option>
+                        <option value="Manufacturing">Manufacturing</option>
+                        <option value="Healthcare">Healthcare</option>
+                        <option value="Consulting">Consulting</option>
+                        <option value="E-commerce">E-commerce</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Location</label>
+                    <input type="text" class="form-control" th:field="*{location}" placeholder="City, State"/>
+                </div>
+                <div class="form-group">
+                    <label>Website</label>
+                    <input type="url" class="form-control" th:field="*{website}" placeholder="https://company.com"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea class="form-control" th:field="*{description}" rows="3" placeholder="Brief about the company..."></textarea>
+            </div>
+            <div style="display:flex; gap:12px;">
+                <button type="submit" class="btn btn-primary">Save Company</button>
+                <a th:href="@{/admin/companies}" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

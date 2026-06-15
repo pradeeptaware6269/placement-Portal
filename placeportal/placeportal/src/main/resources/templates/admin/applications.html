@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Applications – Placement Portal</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<nav class="navbar">
+    <a class="brand" th:href="@{/}">Placement <span>Portal</span></a>
+    <div class="nav-links">
+        <a th:href="@{/admin/dashboard}">Dashboard</a>
+        <a th:href="@{/admin/companies}">Companies</a>
+        <a th:href="@{/admin/jobs}">Jobs</a>
+        <a th:href="@{/admin/applications}" class="active">Applications</a>
+        <a th:href="@{/admin/logout}">Logout</a>
+    </div>
+</nav>
+<div class="container">
+    <h1 class="page-title">📋 All Applications</h1>
+
+    <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
+
+    <div class="card">
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>#</th><th>Student</th><th>Email</th><th>Job Role</th><th>Company</th><th>Applied On</th><th>Current Status</th><th>Update Status</th></tr>
+                </thead>
+                <tbody>
+                    <tr th:if="${applications.empty}">
+                        <td colspan="8" style="text-align:center; color:#64748B;">No applications yet.</td>
+                    </tr>
+                    <tr th:each="app, s : ${applications}">
+                        <td th:text="${s.count}"></td>
+                        <td th:text="${app.student.fullName}"></td>
+                        <td th:text="${app.student.email}"></td>
+                        <td th:text="${app.job.role}"></td>
+                        <td th:text="${app.job.company.name}"></td>
+                        <td th:text="${#temporals.format(app.appliedAt,'dd MMM yyyy')}"></td>
+                        <td><span th:class="'badge badge-' + ${app.status.toString().toLowerCase()}" th:text="${app.status}"></span></td>
+                        <td>
+                            <form th:action="@{/admin/applications/update/{id}(id=${app.id})}" method="post" style="display:flex; gap:6px; align-items:center;">
+                                <select name="status" class="form-control" style="width:130px; padding:5px 8px; font-size:.8rem;">
+                                    <option value="APPLIED"     th:selected="${app.status.toString() == 'APPLIED'}">Applied</option>
+                                    <option value="SHORTLISTED" th:selected="${app.status.toString() == 'SHORTLISTED'}">Shortlisted</option>
+                                    <option value="REJECTED"    th:selected="${app.status.toString() == 'REJECTED'}">Rejected</option>
+                                    <option value="SELECTED"    th:selected="${app.status.toString() == 'SELECTED'}">Selected</option>
+                                </select>
+                                <button type="submit" class="btn btn-primary btn-sm">Update</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

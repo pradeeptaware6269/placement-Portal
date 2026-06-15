@@ -1,0 +1,220 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.1 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.1">
+  <diagram name="Page-1" id="zLx89YbdN472C4pwwV8e">
+    <mxGraphModel dx="1389" dy="880" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="560" width="230" x="260" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-3" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Add company" vertex="1">
+          <mxGeometry height="40" width="105.25" x="327.32" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-4" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Apply Jobs" vertex="1">
+          <mxGeometry height="40" width="102.5" x="326.25" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-5" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="View Jobs" vertex="1">
+          <mxGeometry height="40" width="105" x="325" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-6" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="login" vertex="1">
+          <mxGeometry height="40" width="105" x="325" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-7" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Register" vertex="1">
+          <mxGeometry height="40" width="100" x="327.32" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-8" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="shortlist Candiadtes" vertex="1">
+          <mxGeometry height="40" width="117.5" x="321.19" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-9" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Log Out" vertex="1">
+          <mxGeometry height="40" width="94.63" x="332.63" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-10" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="View Applications" vertex="1">
+          <mxGeometry height="50" width="97.13" x="332.87" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-11" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="manage Students" vertex="1">
+          <mxGeometry height="50" width="109.44" x="325.22" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-12" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Post Jobs" vertex="1">
+          <mxGeometry height="40" width="102.5" x="326.07" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-14" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="630" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-15" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="630" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-16" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="70" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-17" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="85" y="190" />
+            </Array>
+            <mxPoint x="55" y="230" as="sourcePoint" />
+            <mxPoint x="115" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-18" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="85" y="260" />
+            </Array>
+            <mxPoint x="55" y="300" as="sourcePoint" />
+            <mxPoint x="115" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-19" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="85" y="260" as="sourcePoint" />
+            <mxPoint x="84.84" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-20" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="645" y="550" />
+            </Array>
+            <mxPoint x="615" y="590" as="sourcePoint" />
+            <mxPoint x="675" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-21" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="645" y="250" />
+            </Array>
+            <mxPoint x="615" y="290" as="sourcePoint" />
+            <mxPoint x="675" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-22" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="645" y="480" />
+            </Array>
+            <mxPoint x="615" y="520" as="sourcePoint" />
+            <mxPoint x="675" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-23" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="645" y="180" />
+            </Array>
+            <mxPoint x="615" y="220" as="sourcePoint" />
+            <mxPoint x="675" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-24" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="644.63" y="250" as="sourcePoint" />
+            <mxPoint x="644.47" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-25" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="644.63" y="550" as="sourcePoint" />
+            <mxPoint x="644.47" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Students&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="55" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-27" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Admin /Plcement Officer&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="135" x="577.5" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-28" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Company&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="135" x="577.5" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-29" edge="1" parent="1" source="HR_Pr_ckrjmfSVNcRugZ-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="HR_Pr_ckrjmfSVNcRugZ-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-30" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="HR_Pr_ckrjmfSVNcRugZ-7" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="115" y="230" as="sourcePoint" />
+            <mxPoint x="165" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-31" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="HR_Pr_ckrjmfSVNcRugZ-6" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="120" y="230" as="sourcePoint" />
+            <mxPoint x="532" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-32" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="HR_Pr_ckrjmfSVNcRugZ-4" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="120" y="230" as="sourcePoint" />
+            <mxPoint x="402" y="90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-33" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="HR_Pr_ckrjmfSVNcRugZ-5" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="120" y="230" as="sourcePoint" />
+            <mxPoint x="432" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-34" edge="1" parent="1" source="HR_Pr_ckrjmfSVNcRugZ-3" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="510" y="370" as="sourcePoint" />
+            <mxPoint x="620" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-35" edge="1" parent="1" source="HR_Pr_ckrjmfSVNcRugZ-12" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="540" y="390" as="sourcePoint" />
+            <mxPoint x="620" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-36" edge="1" parent="1" source="HR_Pr_ckrjmfSVNcRugZ-11" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="580" y="330" as="sourcePoint" />
+            <mxPoint x="620" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-37" edge="1" parent="1" source="HR_Pr_ckrjmfSVNcRugZ-6" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="425" y="170" as="sourcePoint" />
+            <mxPoint x="620" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-38" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="HR_Pr_ckrjmfSVNcRugZ-9" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="120" y="230" as="sourcePoint" />
+            <mxPoint x="442" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-39" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="438.69" y="540" as="sourcePoint" />
+            <mxPoint x="620" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-40" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="428.75" y="480" as="sourcePoint" />
+            <mxPoint x="620" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-41" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="430" y="150" as="sourcePoint" />
+            <mxPoint x="620" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-42" edge="1" parent="1" source="HR_Pr_ckrjmfSVNcRugZ-9" style="endArrow=none;html=1;rounded=0;exitX=0.998;exitY=0.583;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="425" y="590" as="sourcePoint" />
+            <mxPoint x="620" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HR_Pr_ckrjmfSVNcRugZ-43" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="427.32" y="590" as="sourcePoint" />
+            <mxPoint x="620" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
